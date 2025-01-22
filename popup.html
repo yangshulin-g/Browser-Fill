@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自动填充助手</title>
+  <style>
+    body {
+      width: 380px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    h2 {
+      margin: 0 0 20px 0;
+      color: #2196F3;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #2196F3;
+      box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    #saveRule {
+      width: 100%;
+      background-color: #2196F3;
+      color: white;
+      margin: 10px 0;
+    }
+
+    #saveRule:hover {
+      background-color: #1976D2;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 20px 0;
+    }
+
+    #rulesList {
+      margin-top: 20px;
+    }
+
+    #rulesList h3 {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .rule-item {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .rule-item p {
+      margin: 5px 0;
+      line-height: 1.5;
+    }
+
+    .rule-item strong {
+      color: #555;
+      display: inline-block;
+      width: 70px;
+    }
+
+    .delete-rule {
+      background-color: #ff5252;
+      color: white;
+      padding: 6px 12px;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .delete-rule:hover {
+      background-color: #ff1744;
+    }
+
+    .field-value {
+      word-break: break-all;
+      color: #666;
+      background-color: #f5f5f5;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-left: 5px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .placeholder {
+      color: #999;
+      font-style: italic;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h2>自动填充助手</h2>
+  <div class="form-group">
+    <label>网站 URL：</label>
+    <input type="text" id="urlPattern" placeholder="例如: example.com">
+  </div>
+  <div class="form-group">
+    <label>选择器：</label>
+    <input type="text" id="selector" placeholder="例如: #email-input">
+  </div>
+  <div class="form-group">
+    <label>默认值：</label>
+    <input type="text" id="defaultValue" placeholder="输入默认值">
+  </div>
+  <button id="saveRule">保存规则</button>
+  <hr>
+  <div id="rulesList"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 
